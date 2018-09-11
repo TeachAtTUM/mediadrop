@@ -27,7 +27,7 @@ See LICENSE.txt in the main project directory, for more information.
 
 	<div py:if="player" id="${player.elem_id}-wrapper" class="mcore-player">
 		<div class="mcore-playerbox">
-			${player.render_markup()}
+			${player.render_markup(time_constraint=h.request.params.get('time', None))}
 		</div>
 		<div py:if="show_playerbar" class="mcore-playerbar">
 			<ul class="mcore-nav">
