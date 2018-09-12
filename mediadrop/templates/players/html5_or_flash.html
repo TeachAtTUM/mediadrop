@@ -28,7 +28,7 @@ See LICENSE.txt in the main project directory, for more information.
 	<div py:if="player" id="${player.elem_id}-wrapper" class="mcore-player">
 		<div class="mcore-playerbox">f
 	 	 	<?python from urlparse import urlparse ?>
-			${player.render_markup(fragment=urlparse(h.request.params.url).fragment)}
+			${player.render_markup(fragment=urlparse(h.request.url).fragment)}
 		</div>
 		<div py:if="show_playerbar" class="mcore-playerbar">
 			<ul class="mcore-nav">
