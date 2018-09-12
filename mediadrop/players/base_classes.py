@@ -399,7 +399,7 @@ class AbstractHTML5Player(FileSupportMixin, AbstractPlayer):
                                         qualified=self.qualified)
         return attrs
 
-    def render_markup(self, fragment=None, error_text=None):
+    def render_markup(self, error_text=None):
         """Render the XHTML markup for this player instance.
 
         :param error_text: Optional error text that should be included in
@@ -418,10 +418,6 @@ class AbstractHTML5Player(FileSupportMixin, AbstractPlayer):
             else:
                 mimetype = uri.file.mimetype
             
-            # Injects media fragments into url if provided
-            if fragment is not None:
-                uri = uri.__str__() + '#' + fragment
-
             tag(Element('source', src=uri, type=mimetype))
         if error_text:
             tag(error_text)
