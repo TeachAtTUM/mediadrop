@@ -420,7 +420,7 @@ class AbstractHTML5Player(FileSupportMixin, AbstractPlayer):
             
             # Injects media fragments into url if provided
             if fragment is not None:
-                uri += '#' + fragment
+                uri = uri.__str__() + '#' + fragment
 
             tag(Element('source', src=uri, type=mimetype))
         if error_text:
